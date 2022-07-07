@@ -55,6 +55,7 @@ def q5():
 
 def q6():
     speed_km = float(input('velocidade em km/h: '))
+    
     speed_ms = speed_km // 3.6
 
     print(f'velocidade em m/s: {speed_ms}')
@@ -150,4 +151,32 @@ def q14():
     else:
         print(f'Resultado: reprovado!\nmedia = {media:.1f}')
 
-q14()    
+#q14() 
+
+def q15():
+    base = float(input('base: '))
+    altura = float(input('altura: '))
+    area = area_triangulo(base, altura)
+
+    if isInt(area):
+        print(f'área = {int(area)}')
+
+    else:
+          print(f'área = {area}')  
+
+#q15()
+
+def q16():
+    lado = float(input('lado: '))
+
+    area = quadrado(lado)
+
+    if isInt(area):
+        print(f'área = {int(area)}')
+
+    else:
+          print(f'área = {area}') 
+
+#q16()
+
+

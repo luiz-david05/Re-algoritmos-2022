@@ -23,3 +23,9 @@ def setentaPorCento(valor):
 def media_ponderada_tres_notas(a,p1, b, p2, c, p3):
     media = ((a * p1) + (b * p2) + (c * p3)) / (p1 + p2 + p3)
     return media 
+
+def area_triangulo(base, altura):
+    return (base * altura) / 2 
+
+def quadrado(n):
+    return n * n    
