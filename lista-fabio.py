@@ -12,7 +12,6 @@ def q1():
     print(f'em km/h: {speed_km}')
 # q1()
 
-# questão 2
 def q2():
     hr = int(input('horas: '))
     minutos = int(input('minutos: '))
@@ -22,12 +21,12 @@ def q2():
 
 # q2()
 
-# questão 3
 def q3():
     minutos = int(input('minutos: '))
     horas = minutos // 60
     minutos = minutos % 60
 
+    # if em uma linha
     if horas > 1: print(f'{horas} horas: {minutos} minutos')
     else: print(f'{horas} hora: {minutos} minutos')
 
@@ -38,7 +37,7 @@ def q4():
     cotacao_dolar = float(input('cotação atual do dólar: '))
     valor *= cotacao_dolar
 
-    # formatar para duas casas decimais em python
+    # formatar valor para duas casas decimais em python
     print(f'valor em R$: {valor:.2f}')
 
 #q4()
@@ -158,11 +157,7 @@ def q15():
     altura = float(input('altura: '))
     area = area_triangulo(base, altura)
 
-    if isInt(area):
-        print(f'área = {int(area)}')
-
-    else:
-          print(f'área = {area}')  
+    exibirArea(area)  
 
 #q15()
 
@@ -171,12 +166,57 @@ def q16():
 
     area = quadrado(lado)
 
-    if isInt(area):
-        print(f'área = {int(area)}')
-
-    else:
-          print(f'área = {area}') 
+    exibirArea(area)
 
 #q16()
 
+def q17():
+    base = float(input('base: '))
+    altura = float(input('altura: '))
 
+    area = areaRetangulo(base, altura)
+
+    exibirArea(area) 
+
+#q17()
+
+def q18():
+    raio = float(input('raio: '))
+
+    c = calcularComprimentoRaio(raio)
+
+    exibirArea(c)
+
+#q18()
+
+def q19():
+    raio = float(input('raio: '))
+
+    volume = calcularVolumeEsfera(raio)
+
+    ask = int(input('deseja visualizar o resultado arredondado ? (1-sim ou 2-nao)\nresposta: '))
+
+    if ask == 1:
+        print(f'volume = {volume:.2f}')
+    else:
+        print(f'volume = {volume}') 
+
+#q19()
+
+def q20():
+    tempC = float(input('temperatura em graus celsius: '))
+
+    tempF = converterFahrenheit(tempC)
+
+    exibirTemperatura(tempF)
+
+#q20()
+
+def q21():
+    tempF = float(input('temperatura em graus fahrenheit: '))
+
+    tempC = converterCelsius(tempF)
+
+    exibirTemperatura(tempC)
+
+#q21()
