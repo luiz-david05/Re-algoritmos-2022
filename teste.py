@@ -58,3 +58,14 @@ def exibirTemperatura(temperatura):
 
 def converterCelsius(temperatura):
     return (5 * temperatura - 160) / 9
+
+def kmOuKg(valor):
+    return valor * 1000
+
+def mParaCm(m):
+    return m * 100
+    
+def m_para_km_e_m(m):
+    km = m / 1000
+    m_resto = m % 1000
+    return [km, m_resto]

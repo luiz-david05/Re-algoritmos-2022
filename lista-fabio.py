@@ -220,3 +220,71 @@ def q21():
     exibirTemperatura(tempC)
 
 #q21()
+
+def q22():
+    km = float(input('kilometros: '))
+
+    m = kmOuKg(km)
+
+    if isInt(m):
+        print(f'==> = {int(m)} metros')
+    else:
+        print(f'==> = {m} metros')
+
+#q22()
+
+def q23():
+    kg = float(input('kilogramas: '))
+
+    g = kmOuKg(kg)
+
+    if isInt(g):
+        print(f'==> = {int(g)} gramas')
+    else:
+        print(f'==> = {g} gramas')
+
+#q23()
+
+
+def q24():
+    m = float(input('metros: '))
+
+    cm = mParaCm(m)
+
+    if isInt(cm):
+        print(f'==> = {int(cm)} centímetros')
+    else:
+        print(f'==> = {cm} centímetros')
+
+#q24()
+
+def q25():
+
+    while True:
+        m = float(input('metros: '))
+
+        if m % 1 == 0:
+            break
+
+    [km, m_resto] = m_para_km_e_m(m)
+
+    print(f'== {int(km)} kilometro(s) e {int(m_resto)} metro(s)')
+
+#q25()
+
+def q26():
+    while True:
+        dias = float(input('dias: '))
+
+        if dias % 1 == 0:
+            break
+    [semanas, resto_dias] = dias_para_semanas_e_dias(dias)
+
+    print(f'== {int(semanas)} semana(s) e {int(resto_dias)} dia(s)')
+
+def dias_para_semanas_e_dias(dias):
+    semanas = dias / 7
+    resto_dias = dias % 7
+    return [semanas, resto_dias]
+
+q26()
