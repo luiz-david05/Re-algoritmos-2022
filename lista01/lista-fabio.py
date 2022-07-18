@@ -84,7 +84,7 @@ def q8():
 
     else:
         divisao = soma / subtracao
-        if isInt(divisao):
+        if ehInt(divisao):
             print(f'divisão da soma: {a} + {b} = {soma} pela subtração: {a} - {b} = {subtracao}\n=> resultado da divisão = {int(divisao)}')
         else:
             print(f'divisão da soma: {a} + {b} = {soma} pela subtração: {a} - {b} = {subtracao}\n=> resultado da divisão = {divisao:.1f}')
@@ -105,7 +105,7 @@ def q10():
     quociente = a / b
     resto = a % b
 
-    if isInt(quociente):
+    if ehInt(quociente):
         print(f'o quociente da divisão: {a} / {b} = {int(quociente)}\nresto da divisão = {resto}')
     else:
         print(f'o quociente da divisão: {a} / {b} = {quociente:.1f}\nresto da divisão = {resto}')
@@ -226,7 +226,7 @@ def q22():
 
     m = kmOuKg(km)
 
-    if isInt(m):
+    if ehInt(m):
         print(f'==> = {int(m)} metros')
     else:
         print(f'==> = {m} metros')
@@ -238,7 +238,7 @@ def q23():
 
     g = kmOuKg(kg)
 
-    if isInt(g):
+    if ehInt(g):
         print(f'==> = {int(g)} gramas')
     else:
         print(f'==> = {g} gramas')
@@ -251,7 +251,7 @@ def q24():
 
     cm = mParaCm(m)
 
-    if isInt(cm):
+    if ehInt(cm):
         print(f'==> = {int(cm)} centímetros')
     else:
         print(f'==> = {cm} centímetros')
@@ -263,7 +263,7 @@ def q25():
     while True:
         m = float(input('metros: '))
 
-        if m % 1 == 0:
+        if ehInt(m):
             break
 
     [km, m_resto] = m_para_km_e_m(m)
@@ -276,15 +276,82 @@ def q26():
     while True:
         dias = float(input('dias: '))
 
-        if dias % 1 == 0:
+        if ehInt(dias):
             break
+        
     [semanas, resto_dias] = dias_para_semanas_e_dias(dias)
 
     print(f'== {int(semanas)} semana(s) e {int(resto_dias)} dia(s)')
 
-def dias_para_semanas_e_dias(dias):
-    semanas = dias / 7
-    resto_dias = dias % 7
-    return [semanas, resto_dias]
+#q26()
 
-q26()
+def q27():
+    count = 0
+    while True:
+        segundos = float(input('segundos: '))
+        
+        count += 1
+        if ehInt(segundos):
+            print(f'quantidade de tentativas: {count}')
+            break
+        
+    [horas, minutos, segundos_resto] = segundos_para_hr_min_segs(segundos)
+    
+    print(f'== {int(horas)} hora(s), {int(minutos)} minuto(s) e {int(segundos_resto)} segundo(s)')
+        
+#q27()
+
+def q28():
+    while True:
+        horas = float(input('horas: '))
+        
+        if ehInt(horas):
+            break
+        
+    [semanas, dias, horas_resto] = horas_para_semanas_dias_horas(horas)
+        
+    print(f'== {int(semanas)} semana(s), {int(dias)} dia(s) e {int(horas_resto)} hora(s) ')
+
+#q28()
+
+def q29():
+    while True:
+        
+        meses = float(input('meses: '))
+        
+        if ehInt(meses):
+            break
+        
+    [anos, resto_meses] = meses_para_anos_e_meses(meses)
+    
+    print(f'== {int(anos)} ano(s) e {int(resto_meses)} mes(es)')
+    
+#q29()
+
+def q30():
+    while True:
+        minutos = float(input('minutos: '))
+        
+        if ehInt(minutos):
+            break
+    
+    [dias, horas, resto_minutos] = horas_para_dias_horas_e_minutos(minutos)  
+        
+    
+    print(f'{int(dias)} dia(s), {int(horas)} hora(s) e {int(resto_minutos)} minuto()')
+    
+#q30()
+
+def q31():
+        
+    binario = int(input("número (binário) de 4 digítos: "))
+
+    decimal = converterBinarioParaDecimal(binario)
+
+    print(f'na base decimal = {decimal}')
+    
+    
+q31()
+
+    
+    

@@ -3,8 +3,8 @@ def hello() :
     nome = input('digite seu nome: ')
     print(f'\t--- {nome}, tomar no teu cu, rapá!---')
 
-def isInt(numero):
-     return numero == round(numero)
+def ehInt(n):
+     return n % 1 == 0 
 
 def numero_inverso(numero):
     c = numero // 100
@@ -25,7 +25,7 @@ def media_ponderada_tres_notas(a,p1, b, p2, c, p3):
     return media
 
 def exibirArea(area):
-    if isInt(area):
+    if ehInt(area):
         print(f'área = {int(area)}')
 
     else:
@@ -50,7 +50,7 @@ def converterFahrenheit(temperatura):
     return (9 * temperatura + 160) / 5
 
 def exibirTemperatura(temperatura):
-    if isInt(temperatura):
+    if ehInt(temperatura):
         print(f't°f = {int(temperatura)}')
 
     else:
@@ -69,3 +69,50 @@ def m_para_km_e_m(m):
     km = m / 1000
     m_resto = m % 1000
     return [km, m_resto]
+
+def dias_para_semanas_e_dias(dias):
+    semanas = dias / 7
+    resto_dias = dias % 7
+    return [semanas, resto_dias]
+
+def segundos_para_hr_min_segs(segundos):
+    horas = segundos / 3600
+    minutos = (segundos / 60) % 60
+    segundos_resto = segundos % 60
+    
+    return [horas, minutos, segundos_resto]
+
+def horas_para_semanas_dias_horas(horas):
+    hrs_semana = 24 * 7
+    semanas = horas / hrs_semana
+    dias = (horas / 24) % 24
+    horas_resto = horas % 24
+    
+    return [semanas, dias, horas_resto]
+
+def meses_para_anos_e_meses(meses):
+    anos = meses / 12
+    resto_meses = meses % 12
+    
+    return [anos, resto_meses]
+
+def horas_para_dias_horas_e_minutos(minutos):
+    dias = minutos / (24 * 60)
+    horas = (minutos % 1440) / 60
+    resto_minutos = minutos % 60
+    
+    return [dias, horas, resto_minutos]
+
+def converterBinarioParaDecimal(binario):
+    n = len(str(binario))
+    decimal = 0
+    i = 0
+
+    while n >= 0:
+        resto = binario % 10
+        decimal = decimal + (resto * (2**i))
+        n -= 1
+        i += 1
+        binario //=  10
+    
+    return decimal

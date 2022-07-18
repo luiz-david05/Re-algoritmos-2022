@@ -1,6 +1,7 @@
 import os
+from funcoes_bot import *
 def bot():
-    print('olá, sou o BotFoda.')
+    print('olá, sou o Bot.')
 
     ask_name = input('\nE você, como se chama?\nsua resposta: ')
 
@@ -25,12 +26,20 @@ def bot():
             menu()
             opcao = int(input('\nsua opção: '))
 
+            if opcao == 2:
+                calcularIdade()
+
+            enterToContinue()
+            print("\n" * os.get_terminal_size().lines)
+            menu()
+            opcao = int(input('\nsua opção: '))     
+
     else:
-        print(f'\nBotFoda diz : Blz, vá com Jesus, {ask_name}.')
+        print(f'\nBot diz : Blz, vá com Jesus, {ask_name}.\nE a paz de Deus, que excede todo o entendimento, guardará os vossos corações e\nos vossos pensamentos em Cristo Jesus. Filipenses 4:7')
 
 def menu():
-    menu = '\nselecione uma tarefa para o BotFoda\n'
-    menu += '\nmenu de opções do BotFoda\n'
+    menu = '\nselecione uma tarefa para o Bot\n'
+    menu += '\nmenu de opções do Bot\n'
     menu += '\n[1] -> operações com dois números: somar, subtrair, dividir ou multiplicar'
     menu += '\n[2] -> adivinhar sua idade'
     menu += '\n[3] -> dizer a quantidade de dias que faltam para o fim do ano'
@@ -70,9 +79,4 @@ def enterToContinue():
     enter = input('\naperte enter para continuar...')
     print("\n" * os.get_terminal_size().lines)
 
-def ehInt(n):
-    return n % 1 == 0
-
-def exibirResultado(resultado):
-    print(f'resultado = {int(resultado)}')
 bot()
