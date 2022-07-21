@@ -343,15 +343,100 @@ def q30():
 #q30()
 
 def q31():
-        
+    
     binario = int(input("número (binário) de 4 digítos: "))
 
     decimal = converterBinarioParaDecimal(binario)
 
     print(f'na base decimal = {decimal}')
-    
-    
-q31()
+        
+#q31()
 
+def q32():
+    
+    n = int(input('número: '))
+        
+    c, d, u = n_inverso(n)
+    
+    # convertendo para string (de forma bruta)
+    numero_inverso = str(u) + str(d) + str(c)
+    
+    print(f'numero inverso: {numero_inverso}')
+    
+    # convertendo para inteiro dentro da função print
+    print(f'diferença == {n} - {numero_inverso} = {n - int(numero_inverso)}')
+
+#q32()
+
+def q33():
+    n = int(input('número: '))
+        
+    c, d, u = n_inverso(n)
+    
+    numero_inverso = str(u) + str(d) + str(c)
+    
+    print(f'numero inverso: {numero_inverso}')
+    
+    print(f'soma == {n} + {numero_inverso} = {n + int(numero_inverso)}')
+    
+#q33()
+
+def q34():
+    a = float(input('primeiro número: '))
+    b = float(input('segundo número: '))
+    c = float(input('terceiro número: '))
+    
+    media = mediaAritmetica(a, b, c)
+    
+    if ehInt(media):
+        print(f'media = {int(media)}')
+    else:
+        print(f'media = {media:.1f}')
+        
+#q34()
+
+def q35():
+    n = int(input('número: '))
+    
+    somar_elementos_n_4digitos(n)
+    
+#q35()
+
+def q36():
+    idade = input('idade em anos, meses e dias. ex(21 (anos)/ 5 (meses)/10 (dias)): ').split('/')
+    
+    inteiros = []
+    
+    for elementos in idade:
+        inteiros.append(int(elementos))
+    
+    anos, meses, dias = inteiros
+    
+    idade_dias = IdadeEmDias(anos, meses, dias)
+    
+    print(f'idade = {idade_dias} dias')
+    
+#q36()
+
+def q37():
+    idade = int(input('idade em dias: '))
+    
+    anos, meses, dias = idade_em_anos_meses_dias(idade)
+    
+    print(f'{anos} anos, {meses} mes(es) e {dias} dia(s)')
+def idade_em_anos_meses_dias(idade):
+    anos = idade // 365
+    meses = (idade % 365) // 30
+    dias = idade % 30
+    
+    return anos, meses, dias
+#q37()
+
+def q38():
+    fracao1 = int(input('fração.ex(1/3): '))
+    fracao2 = int(input('fração: '))
+    
+    # amanhã termino
+    
     
     

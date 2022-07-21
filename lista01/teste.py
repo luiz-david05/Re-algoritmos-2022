@@ -116,3 +116,31 @@ def converterBinarioParaDecimal(binario):
         binario //=  10
     
     return decimal
+
+def n_inverso(n):
+    c = n // 100
+    d = (n % 100) // 10
+    u = n % 10
+    
+    return c, d, u
+
+def mediaAritmetica(n1, n2, n3):
+    return (n1 + n2 + n3) / 3
+
+def somar_elementos_n_4digitos(n):
+    m = n // 1000
+    c = (n % 1000) // 100
+    d = (n % 100) // 10
+    u = n % 10
+    
+    soma = m + c + d + u
+    print(f'soma == {m} + {c} + {d} + {u} = {soma} ')
+    
+def IdadeEmDias(anos, meses, dias):
+    anos_dias = anos * 365
+    meses_dias = meses * 30
+    
+     # não ira cobrir os anos bissextos
+    idade_dias = anos_dias + meses_dias + dias
+    
+    return idade_dias
