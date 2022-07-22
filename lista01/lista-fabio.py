@@ -1,5 +1,5 @@
 # forma de importar todas as funçoes de um arquivo
-from teste import *
+from funcoes import *
 # questão 1
 def q1():
     #recebendo os dados
@@ -424,19 +424,50 @@ def q37():
     anos, meses, dias = idade_em_anos_meses_dias(idade)
     
     print(f'{anos} anos, {meses} mes(es) e {dias} dia(s)')
-def idade_em_anos_meses_dias(idade):
-    anos = idade // 365
-    meses = (idade % 365) // 30
-    dias = idade % 30
-    
-    return anos, meses, dias
+
 #q37()
 
 def q38():
-    fracao1 = int(input('fração.ex(1/3): '))
-    fracao2 = int(input('fração: '))
+    fracao1 = input('primeira fração. ex(1/3): ').split('/')
+    fracao2 = input('segunda fração: ').split('/')
     
-    # amanhã termino
     
+    ints = []
+    
+    for i in fracao1:
+        ints.append(int(i))
+    
+    num1, den1 = ints
+    
+    ints = []
+    
+    for i in fracao2:
+        ints.append(int(i))
+    
+    num2, den2 = ints
+
+    somarFracoes(num1, den1, num2, den2)
+    
+#q38()
+
+def q39():
+    a = int(input('A: '))
+    b = int(input('B: '))
+    c = int(input('C: '))
+    
+    calcular_e_mostrar_D(a, b, c)
+
+#q39()
+
+def q40():
+    anos_fumando = int(input('Quantidade de anos fumando: '))
+    qtd_cigarros = int(input('Quantidade de cigarros fumados por dia: '))
+    preco_carteira = float(input('Preço da carteira de cigarro R$: '))
+    
+    dinheiro_gasto = calcularGastoFumante(anos_fumando, qtd_cigarros, preco_carteira)
+    
+    print(f'Quantidade de dinheiro gasto: {dinheiro_gasto:.2f} R$ \ne de brinde aumentou a taxa de câncer de pulmão.')
+    
+q40()
     
     

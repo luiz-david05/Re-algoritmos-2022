@@ -144,3 +144,60 @@ def IdadeEmDias(anos, meses, dias):
     idade_dias = anos_dias + meses_dias + dias
     
     return idade_dias
+
+def idade_em_anos_meses_dias(idade):
+    anos = idade // 365
+    meses = (idade % 365) // 30
+    dias = idade % 30
+    
+    return anos, meses, dias
+
+def somarFracoes(num1, den1, num2, den2):
+    
+    # denominadores iguais
+    if den1 == den2:
+        print(f'soma = {num1}/{den1} + {num2}/{den2}')
+        print('Resultado:')
+        print(f'{num1 + num2}\n─\n{den1}')
+    # denominadores diferentes
+    else:
+        mmc = calcularMmc(den1, den2)
+        
+        soma = (mmc // den1 * num1) + (mmc // den2 * num2)
+        print(f'soma = {num1}/{den1} + {num2}/{den2}')
+        print('Resultado:')
+        print(f'{soma}\n─\n{mmc}')
+        
+        
+def calcularMmc(a, b):
+    if a > b:
+        c = a
+    else:
+        c = b
+        
+    while True:
+
+        if c % a == 0 and c % b == 0:
+            break
+        else:
+            c += 1
+    
+    return c
+
+def calcular_e_mostrar_D(a, b, c):
+    r = (a + b) ** 2
+    s = (b + c) ** 2
+    d  = (r + s) // 2
+    print('\nExpressão: D = R + S / 2')
+    print(f'Onde, R = (A + B)², R = ({a} + {b})² --> R = {r}\nS = (B + C)², S = ({b} + {c})² --> S = {s}\nresultado da expressão: D = ({r} + {s} / 2), --> D = {d}')
+    
+def calcularGastoFumante(anos, qtd, preco):
+    # anos em dias
+    dias = anos * 365
+    
+    cigarros_por_ano = qtd * dias
+    carteiras_fumadas = cigarros_por_ano // 20
+    dinheiro_fumado = carteiras_fumadas * preco
+    
+    return dinheiro_fumado
+    
